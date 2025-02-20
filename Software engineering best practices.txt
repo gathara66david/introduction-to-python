@@ -1,0 +1,183 @@
+Data science is tending to incorporate more software engineering these
+days, so it helps to understand some software engineering best practices.
+Debugging errors and utilizing
+documentation
+When running Python code (or any code from any language), we will
+inevitably run into problems. This usually manifests as errors that show up
+when we run the code, as in the following screenshot:
+Figure 2.7: An example of an error in IPython. A number cannot be added to a string
+In this case, we tried to add a number to text (a string). This is not allowed
+and gives us the error TypeError: unsupported operand type(s) for +:
+'int' and 'str' . If you can tell what the error is from the output, then you
+can try to fix it straight away. Otherwise, the most important part of the
+error is usually at the end/bottom of the output and is followed by
+something with an error, such as TypeError: <error message here> , and
+will have syntax highlighting similar to TypeError above. Copy this text
+by selecting it and then right-clicking in Windows, using cmd + c in Mac,
+or using Ctrl + Shift + c in Linux. Then, search your favorite internet
+search engine for the error. Often, this will lead us to Stack Overflow,
+which has a collection of common errors and their fixes for almost all
+programming languages. So be on the lookout for stack overflow links
+when searching for errors.
+Debugging
+Python comes with a module for debugging code called pdb . To use it, we
+insert the line import pdb; pdb.set_trace() in our code. Then, when we
+run our code, the execution stops on that line and allows us to type in
+Python codes to examine the variables there. For example, try running the
+following code (or running the pdb_demo.py file from this book's GitHub
+repository):
+test_str = 'a test string'
+a = 2
+b = 2
+import pdb; pdb.set_trace()
+c = a + b
+We are creating a few variables, a and b , then initializing the debugger,
+and finally running one more calculation at the end of the code. When you
+run this, you'll see that the execution of the code stops, and we're presented
+with a line with (Pdb) on the far left. This allows us to run Python code
+one line at a time as if we're in a Python shell. We can inspect the variables
+we've created so far ( test_str , a , and b ), but the variable c is not
+available yet because we haven't yet run that line. To exit the debugger, we
+can type exit or use Ctrl + d .
+There is also another package, ipdb , which is the interactive Python
+debugger. This must be installed with pip or conda. The ipdb debugger is
+like IPython, which has features such as autocomplete.
+Documentation
+Using documentation is extremely important when coding. For any major
+programming language or package, there is documentation explaining how
+its components work.
+For example, the official Python documentation has been referenced
+throughout the chapter so far and is useful for built-in Python functions and
+Python fundamentals.
+Documentation for other packages can be found by searching an internet
+search engine for " <package name> documentation " or " <package name>
+docs ", since documentation is often abbreviated as "docs". Searching for a
+specific function in a package can also be helpful in getting to the
+information you need faster.
+Lastly, we can access documentation within IPython or Jupyter Notebooks
+with a question mark next to any object or using the help() command. For
+example, to bring up the documentation for the range function, we could
+use ?range or range? .
+Version control with Git
+Since data science tends to consist of Python code, we need a way to save
+and keep track of our code. The best practice for saving code, collaborating,
+and tracking changes is to use version control. There are several version
+control systems and software solutions out there, but Git is the most
+frequently used version control software for now, with GitHub being one of
+the most frequently used code-hosting platform utilizing Git.
+Git is a protocol for keeping track of changes in code, and GitHub allows us
+to use Git with a web service. GitHub lets us create accounts, store our code
+on their servers, and share it with the world. We can also easily collaborate
+with other people using GitHub. A Git/GitHub crash course is beyond the
+scope of this book, but if you are interested in a book on the subject, we can
+recommend Version Control with Git and GitHub, by Alex Magana from
+Packt.
+GitHub has a quick-start guide here: docs.github.com/en/freepro-team@latest/github/getting-started-withgithub/quickstart.
+Starting out, you might find the easiest way to use GitHub is with the GUI,
+which is available as an official version on Windows and Mac, and as an
+unofficial version on Linux. The GitHub GUI can be downloaded from
+https://desktop.github.com/. However, there is also a
+command-line interface (CLI) tool for GitHub that you may find you
+prefer. The CLI is more advanced and requires managing your GitHub
+repositories through a terminal.
+Code style
+Python has a code style guide described in the Python Enhancement
+Proposal 8 (PEP8). This covers all sorts of details of Python code best
+practices. For example, when using math operators, it's best to leave a space
+between the operators and the numbers, such as 2 * 2 . When providing
+arguments to a function, we should not have spaces between the argument
+name, the equals sign, and the argument, such as sorted(a_list,
+reverse=True) . These standards help to make Python code more easily
+readable and searchable, especially as code is shared between large groups
+of people.
+We can easily format our code to PEP8 standards with a Python package,
+autopep8 .
+One other thing to mention with regard to code style is naming conventions.
+For variables, functions, and classes in Python, we can use letters,
+underscores, and numbers. We almost always want to start our names with a
+letter, although there can be some special cases for starting with an
+underscore. We can also name variables with different patterns, such as
+camelCase and snake_case . Camel case has a combination of lowercase
+and uppercase letters, with the start of words being uppercase. Optionally,
+the first word can be uppercase. Snake case is all lowercase, with an
+underscore separating words. PEP8 specifies that we should use lowercase
+variable and function names in the style of snake case.
+PEP8 has an entire section on naming conventions that includes variables
+that hold constant values, class names, and more:
+https://www.python.org/dev/peps/pep0008/#prescriptive-naming-conventions.
+Another place you can learn more about good coding style is the book Clean
+Code in Python 2nd Edition by Mariano Anaya.
+Whichever naming convention you choose to use, stick with one for each
+project and be consistent.
+Productivity tips
+There are a few productivity hacks that can help you code faster. One big
+trick that we have already touched on is tab autocompletion. Tab
+autocompletion is available within many command consoles (terminals),
+IPython, Jupyter Notebooks, IDEs, and code editors. We can simply start
+typing a word, hit the Tab button, and the word can be autocompleted, or
+possible completions can be suggested.
+A similar trick is using the up arrow in a terminal and/or IPython session.
+This will cycle through your recent commands, so you don't need to re-type
+the same exact thing more than once.
+Another useful trick is using the control key (command or option keys on
+Mac) on your keyboard to navigate by word chunks. While holding down
+the Ctrl key, we can press the left and right arrow key to move one
+word at a time. This can also be used with the delete and backspace keys
+to delete whole words at a time. Related to this is the use of the Ctrl key
+to select words by chunks, or even entire lines at a time by using the
+" home " and " end " keys on your keyboard. Combining this with Ctrl + c
+or Ctrl + x for copy or cut commands allows you to duplicate or move
+lines of code around quickly.
+Also related to the Ctrl + arrows trick is adding brackets and quotes
+around a chunk of text. For example, if we type a word without quotes in
+Python, but want to make it a string, we can use the Ctrl key and the left
+arrow key to select the entire word and then type a quotation mark (either "
+or '). In most IDEs, text editors, and Jupyter Notebooks, this will add
+quotations on both sides of the word. We can also quickly add brackets or
+parentheses around text in this same way.
+In general, learning keyboard shortcuts can dramatically improve your
+performance. Jupyter Notebooks, VS Code, GitHub's GUI, and other
+software have several hotkey combinations available that can make you
+more productive. For example, from the GitHub GUI in Windows, we can
+open a Command Prompt in the current folder of the repository we're
+viewing by pressing Ctrl + ` (that's the backtick character, which is the
+button just below the Esc key). Another example is creating new tabs,
+switching between them, and closing them with hotkeys in browsers and
+terminals. In the terminal for Windows, we can create a new tab with Ctrl
++ Shift + t , and switch tabs with Ctrl + Tab and Ctrl + Shift +
+Tab . Closing tabs can be done with Ctrl + Shift + w . For most
+applications with tabs, some combination of Ctrl / cmd with either the Tab
+key or page up/page down can be used to switch between tabs, while Ctrl
++ t and Ctrl + w are often used to open/close tabs. One other trick for
+switching rapidly between applications is Alt + Tab . With these keyboard
+shortcuts, you often barely need to touch the mouse, which can boost your
+productivity and efficiency. If you are interested in efficiency, you might
+take a look at the Colemak keyboard layout as well. This is designed to be
+more efficient than the QWERTY keyboard layout, while keeping the same
+hotkey locations for copy, paste, and cut.
+One trick for running commands from IPython or Jupyter Notebooks as if
+you are running them in the terminal is to preface the command with an
+exclamation point. For example, to install a package with pip from Jupyter
+Notebooks, we can do something like this: !pip install pandas . This
+usually doesn't work for commands that require interaction, so for conda
+installs, we should add the -y flag to skip confirmation, like so: !conda
+install pandas -y .
+If you find yourself typing some common commands from the terminal, you
+might consider adding an alias for it. For example, I set the alias for
+jupyter notebook to simply jn . To do this in Windows with a
+PowerShell (like Terminal from www.aka.ms/terminal), first open
+your profile with notepad $profile , and then add the line SetAlias -Name jn -Value jupyter-notebook . When you open
+new terminals, you can now type jn to start Jupyter Notebooks.
+In Mac, you can edit a similar profile file with nano ~/.zshrc from
+the command line and then add a line with alias jn="jupyter
+notebook" . The hotkeys for saving and exiting nano are shown on the
+bottom of the terminal – this is a text editor available in most Linux and
+Mac terminals by default. In most variants of Linux, the profile file is
+~/.bashrc . Again, when you open a new terminal, you will be able to
+simply type jn to start Jupyter Notebooks.
+Lastly, if we are running some code in a terminal or Command Prompt, we
+can use the Ctrl + c key combination to cancel running processes, and
+the Ctrl + d key combination to exit terminals. With Windows command
+consoles, we need to type exit instead of Ctrl + d , but in other
+terminals (Mac, Linux) we can press Ctrl + d to exit. We already touched
+on these concepts and commands earlier, but they are worth restating.

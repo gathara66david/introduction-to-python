@@ -166,7 +166,7 @@ If you find yourself typing some common commands from the terminal, you
 might consider adding an alias for it. For example, I set the alias for
 jupyter notebook to simply jn . To do this in Windows with a
 PowerShell (like Terminal from www.aka.ms/terminal), first open
-your profile with notepad $profile , and then add the line SetAlias -Name jn -Value jupyter-notebook . When you open
+your profile with notepad $profile , and then add the line Set Alias -Name jn -Value jupyter-notebook . When you open
 new terminals, you can now type jn to start Jupyter Notebooks.
 In Mac, you can edit a similar profile file with nano ~/.zshrc from
 the command line and then add a line with alias jn="jupyter

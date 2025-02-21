@@ -72,7 +72,7 @@ with other people using GitHub. A Git/GitHub crash course is beyond the
 scope of this book, but if you are interested in a book on the subject, we can
 recommend Version Control with Git and GitHub, by Alex Magana from
 Packt.
-GitHub has a quick-start guide here: docs.github.com/en/freepro-team@latest/github/getting-started-withgithub/quickstart.
+GitHub has a quick-start guide here: docs.github.com/en/free pro-team@latest/github/getting-started-with github/quickstart.
 Starting out, you might find the easiest way to use GitHub is with the GUI,
 which is available as an official version on Windows and Mac, and as an
 unofficial version on Linux. The GitHub GUI can be downloaded from
@@ -104,7 +104,7 @@ underscore separating words. PEP8 specifies that we should use lowercase
 variable and function names in the style of snake case.
 PEP8 has an entire section on naming conventions that includes variables
 that hold constant values, class names, and more:
-https://www.python.org/dev/peps/pep0008/#prescriptive-naming-conventions.
+https://www.python.org/dev/peps/pep 0008/#prescriptive-naming-conventions.
 Another place you can learn more about good coding style is the book Clean
 Code in Python 2nd Edition by Mariano Anaya.
 Whichever naming convention you choose to use, stick with one for each
